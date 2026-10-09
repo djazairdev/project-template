@@ -20,7 +20,7 @@ Run it again later to pick up changes to the template: `AGENTS.md` records the v
 
 The [checklist](CHECKLIST.md) has three levels:
 
-- **Required:** the Hub's seven checks. An open-source licence, a commit in the last 90 days, a README and a CONTRIBUTING file, 3 issues for newcomers, the pledge to reply to newcomers' pull requests within 7 days, the `djazairdev` topic, and a link to Algeria.
+- **Required:** the Hub's seven checks. An open-source licence, a commit in the last 90 days, a README and a CONTRIBUTING file, the `good first issue` or `help wanted` label, the pledge to reply to newcomers' pull requests within 7 days, the `djazairdev` topic, and a link to Algeria.
 - **Recommended:** CI on every pull request, a protected default branch, code scanning, dependency updates, a changelog with semantic versions, `AGENTS.md`, and consistent files.
 - **Optional:** releases from the changelog, deploys from CI, an Arabic README, Discussions.
 
