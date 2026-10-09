@@ -58,6 +58,7 @@ Wait for the answers before Step 4.
 - **R3 CONTRIBUTING:** start from the template's `CONTRIBUTING.md`, or merge it into the existing file. Fill in the real setup and test commands from Step 1, and replace `OWNER/NAME`.
 - **R5 Pledge:** keep the *Our pledge* section in CONTRIBUTING if the maintainers agreed.
 - **R4 Issues for newcomers:** draft 3 to 5 issues from real gaps you saw: a missing test, a confusing error message, a doc to write, a small feature in the project's roadmap. Each has a title, the context, where in the code to start, what *done* means, and a line `You'll need: …`. Show the drafts; create them only when the maintainer says yes, labelled `good first issue` (small, well defined) or `help wanted`.
+- **C9 A form of the project's own** (a data error form for a dataset, say): repositories in the organisation lose all the inherited forms when they add one, so copy `bug.yml`, `idea.yml` and `config.yml` from https://github.com/djazairdev/.github too, and adapt their descriptions. Quote any YAML value that contains `: `, and check every form parses. A label a form sets must exist: list the labels to create in your report.
 - **C1, C9 (outside the organisation only):** copy `CODE_OF_CONDUCT.md`, `SECURITY.md` and `.github/ISSUE_TEMPLATE/` from https://github.com/djazairdev/.github, with the maintainer's contacts in place of djazair.dev's. Repositories in the organisation inherit them: don't copy.
 
 ## Step 5: Add the recommended files
@@ -77,6 +78,7 @@ If the repository came from the template: rename `README.template.md` to `README
 ## Step 7: Check
 
 - Run the project's tests, linter and build again, and the new CI's commands, and fix what you broke.
+- Check that the docs you touched still tell the truth: counts, statuses ("in development", "waits for review"), and commands. Fix what is stale, or list it.
 - Check every link you added, and that no placeholder such as `OWNER/NAME`, `Project name` or `…` is left.
 - If the repository is on GitHub, run the Hub's checks (they read GitHub, so pushed changes count only after the push):
 
