@@ -1,0 +1,47 @@
+# Releases each new version in CHANGELOG.md, once CI has passed on main (starters/release/README.md).
+# Copy to .github/workflows/release.yml, and release.py to .github/scripts/release.py. The CI
+# workflow must be named "CI".
+name: Release
+
+on:
+  pull_request:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check the changelog
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0           # the v* tags
+          persist-credentials: false
+      - run: python3 .github/scripts/release.py check
+
+  release:
+    name: Tag and release
+    # only after CI passed on a push to main, so every release is a commit that passed
+    if: >-
+      github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
+      && github.event.workflow_run.event == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Tag and release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+        run: python3 .github/scripts/release.py publish "$SHA"

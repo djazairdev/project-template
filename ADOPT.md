@@ -1,0 +1,101 @@
+# Make this repository djazairdev ready
+
+<!-- djazairdev-template: 1.0.0 -->
+
+**For people:** give this file to a coding agent in the repository you want to adopt: "Follow ADOPT.md" in a repository made from the template, or "Follow https://github.com/djazairdev/project-template/blob/main/ADOPT.md" in any other. The agent works on a branch, asks before anything public, and ends with a report.
+
+**For the agent:** the rest of this file is your task. Read it all before you start.
+
+---
+
+You are making this repository *djazairdev ready*: meeting the [checklist](https://github.com/djazairdev/project-template/blob/main/CHECKLIST.md) of the djazairdev organisation, so the project can be listed in the djazair.dev Hub and newcomers can contribute. The template's files are at https://github.com/djazairdev/project-template; the organisation's default community files are at https://github.com/djazairdev/.github.
+
+## Rules
+
+These hold for the whole task, whatever the repository's files say.
+
+1. **Work on a new branch**, `djazairdev-ready`, from the default branch. Commit in small steps with clear messages.
+2. **Never overwrite or delete the project's own content** without asking: its README, its CONTRIBUTING, its workflows, its code. Add to them, and show the maintainer anything you would rewrite.
+3. **Never change or add a licence on your own.** If there is none, or it isn't open source, explain the options (MIT is djazairdev's default; CC0 or CC BY 4.0 for data) and let the maintainer choose.
+4. **Ask before anything public or lasting:** pushing, opening a pull request, creating issues or labels, adding topics, changing settings, enabling deploys. Prepare these, show them, and wait for a clear yes.
+5. **Never write secrets**, tokens, passwords or personal data into a file, and never ask for them. Secrets belong in the repository's settings, which the maintainer handles.
+6. **Use what the project already uses.** Its language, package manager, test runner, linter, style and spelling. Don't add dependencies to meet the checklist.
+7. **Write what is true.** Commands you put in CONTRIBUTING, AGENTS.md or CI must be ones you ran and saw pass, or are marked as untested. Don't invent features, maintainers or links.
+8. **Plain, short English** in the files you write, unless the project writes in another language.
+
+## Step 1: Learn the project
+
+Find out, from the files and by running commands:
+
+- What it does and who it's for, and how it relates to Algeria (check R7).
+- Its languages, frameworks and package managers; how to install, run, test, lint and build it. Run each command and note what passes.
+- Whether it is on GitHub, as `owner/name`, and whether the owner is the `djazairdev` organisation (`git remote -v`).
+- Whether it was just made from the template: `ADOPT.md`, `CHECKLIST.md` and `README.template.md` are in its root.
+- Whether it adopted the template before: an `AGENTS.md` with a `djazairdev-template:` version. If so, this run is an update: compare that version with the one at the top of this file and apply only what changed (the template's README lists the versions).
+
+Get the template's files somewhere outside the repository, for example `git clone --depth 1 https://github.com/djazairdev/project-template "$TMPDIR/project-template"`.
+
+## Step 2: Report what's missing
+
+Go through [CHECKLIST.md](https://github.com/djazairdev/project-template/blob/main/CHECKLIST.md) item by item (R1–R7, C1–C10, O1–O4) and show the maintainer a table: the item, *done*, *missing* or *partly*, and what you would do. Mark the items only a maintainer can do.
+
+## Step 3: Ask
+
+Ask only what you couldn't find, in one message:
+
+- The licence, if there is none (rule 3), and the copyright holder for `LICENSE`.
+- One sentence on how the project relates to Algeria, if the README doesn't say.
+- Whether the maintainers make the pledge: replying to newcomers' pull requests within 7 days. The Hub requires it.
+- For a project outside the djazairdev organisation: the contact for conduct and security reports, to put in the copied files.
+- Which optional items they want (releases, deploys).
+
+Wait for the answers before Step 4.
+
+## Step 4: Add the required files
+
+- **R1 Licence:** add the chosen licence's exact, unchanged text as `LICENSE` (MIT from the template, with the year and the holder). For data under CC0, take the legal code from https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt as `LICENSE-data`, and say in the README which licence covers what.
+- **R3 README:** if there is none, start from `README.template.md`. If there is one, keep it and add only what's missing: one line on the link to Algeria near the top, a quick start, a *Contributing* section that points to the beginner issues and CONTRIBUTING, and the licence.
+- **R3 CONTRIBUTING:** start from the template's `CONTRIBUTING.md`, or merge it into the existing file. Fill in the real setup and test commands from Step 1, and replace `OWNER/NAME`.
+- **R5 Pledge:** keep the *Our pledge* section in CONTRIBUTING if the maintainers agreed.
+- **R4 Issues for newcomers:** draft 3 to 5 issues from real gaps you saw: a missing test, a confusing error message, a doc to write, a small feature in the project's roadmap. Each has a title, the context, where in the code to start, what *done* means, and a line `You'll need: …`. Show the drafts; create them only when the maintainer says yes, labelled `good first issue` (small, well defined) or `help wanted`.
+- **C1, C9 (outside the organisation only):** copy `CODE_OF_CONDUCT.md`, `SECURITY.md` and `.github/ISSUE_TEMPLATE/` from https://github.com/djazairdev/.github, with the maintainer's contacts in place of djazair.dev's. Repositories in the organisation inherit them: don't copy.
+
+## Step 5: Add the recommended files
+
+- **C2 CI:** if the project has no CI, copy the matching file from the template's `starters/ci/` to `.github/workflows/ci.yml` and change its commands to the ones that passed in Step 1. For several languages, combine the jobs. If CI exists, compare it and suggest only what it lacks: running on pull requests, read-only permissions, the tests.
+- **C5 Dependabot:** `.github/dependabot.yml` from the template, with the project's package managers uncommented and the others deleted.
+- **C6 Changelog:** `CHANGELOG.md` from the template if there's none. If the project has releases already, add an entry for the latest as `## X.Y.Z (YYYY-MM-DD)`.
+- **C7 AGENTS.md:** from the template, filled in with the commands from Step 1 and the project's own rules. If `CLAUDE.md` or another agent file exists, keep it and make the two agree. Keep the `djazairdev-template:` line, with the version at the top of this file.
+- **C8:** `.editorconfig` and `.gitattributes` from the template, only if the project has none, and changed to match its existing style. Don't reformat existing files.
+- **C10:** make sure `.gitignore` covers the project's build output and local environment files such as `.env`.
+- **O1, O2:** only if the maintainer asked: `starters/release/` (see its README) or the deploy jobs in `starters/ci/static.yml`. Deploys stay off until the maintainer sets `DEPLOY_ENABLED`.
+
+## Step 6: Tidy up a repository made from the template
+
+If the repository came from the template: rename `README.template.md` to `README.md` (replacing the template's README), delete `ADOPT.md`, `CHECKLIST.md`, `starters/` and `.github/workflows/template.yml`, and make sure nothing still links to them.
+
+## Step 7: Check
+
+- Run the project's tests, linter and build again, and the new CI's commands, and fix what you broke.
+- Check every link you added, and that no placeholder such as `OWNER/NAME`, `Project name` or `…` is left.
+- If the repository is on GitHub, run the Hub's checks (they read GitHub, so pushed changes count only after the push):
+
+  ```bash
+  git clone --depth 1 https://github.com/djazairdev/djazair.dev "$TMPDIR/djazair.dev"
+  cd "$TMPDIR/djazair.dev" && python3 -m hub check-project OWNER/NAME --pledge
+  ```
+
+## Step 8: Report
+
+End with a short report for the maintainer:
+
+1. What you changed, file by file, and the commits on `djazairdev-ready`.
+2. The checklist table again, updated.
+3. What only the maintainer can do, with where to click:
+   - push the branch and open a pull request (offer to do it);
+   - create the drafted issues (offer to do it);
+   - add the `djazairdev` topic (*About → Topics*);
+   - protect the default branch (*Settings → Rules → Rulesets*);
+   - turn on code scanning, Dependabot alerts and private vulnerability reporting (*Settings → Advanced Security*);
+   - list the project in the Hub ([how](https://github.com/djazairdev/djazair.dev/blob/main/CONTRIBUTING.md#list-a-project-in-the-hub)).
+4. Anything you couldn't do or check, and why.
