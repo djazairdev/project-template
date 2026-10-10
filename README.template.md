@@ -27,7 +27,7 @@ No code needed to help: report a bug, suggest an idea, improve the docs, or test
 
 ## Feedback
 
-- [Ask a question](https://github.com/orgs/djazairdev/discussions)
+- [Ask a question](https://github.com/orgs/djazairdev/discussions/categories/q-a)
 - [Report a bug](https://github.com/OWNER/NAME/issues/new?template=bug.yml)
 - [Suggest an idea](https://github.com/OWNER/NAME/issues/new?template=idea.yml), or 👍 the [ideas](https://github.com/OWNER/NAME/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc) you want most
 - Follow [djazairdev on Facebook](https://www.facebook.com/djazairdev) for news
