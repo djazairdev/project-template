@@ -99,6 +99,6 @@ End with a short report for the maintainer:
    - create the drafted issues (offer to do it);
    - add the `djazairdev` topic (*About → Topics*);
    - protect the default branch: import `.github/rulesets/main.json` (*Settings → Rules → Rulesets → New ruleset → Import a ruleset*, or the `gh api` command in `.github/rulesets/README.md`), after the pull request that adds it is merged;
-   - turn on code scanning, Dependabot alerts and private vulnerability reporting (*Settings → Advanced Security*);
+   - outside the djazairdev organisation only: turn on code scanning, Dependabot alerts and private vulnerability reporting (*Settings → Advanced Security*); repositories in the organisation get them from its security configuration;
    - list the project in the Hub ([how](https://github.com/djazairdev/djazair.dev/blob/main/CONTRIBUTING.md#list-a-project-in-the-hub)).
 4. Anything you couldn't do or check, and why.
