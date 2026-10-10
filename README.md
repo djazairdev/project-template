@@ -30,7 +30,7 @@ The agent checks the project against the [checklist](docs/CHECKLIST.md), adds wh
 - [Ask a question](https://github.com/orgs/djazairdev/discussions)
 - [Report a bug](https://github.com/djazairdev/project-template/issues/new?template=bug.yml)
 - [Suggest an idea](https://github.com/djazairdev/project-template/issues/new?template=idea.yml), or 👍 the [ideas](https://github.com/djazairdev/project-template/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc) you want most
-<!-- - Follow [djazairdev on Facebook](FACEBOOK_PAGE_URL) for news -->
+- Follow [djazairdev on Facebook](https://www.facebook.com/djazairdev) for news
 
 Please write in English.
 
