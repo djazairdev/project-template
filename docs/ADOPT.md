@@ -102,9 +102,9 @@ End with a short report for the maintainer:
 3. What only the maintainer can do, with where to click:
    - push the branch and open a pull request (offer to do it);
    - create the drafted issues (offer to do it);
-   - add the `djazairdev` topic (*About → Topics*);
+   - add the topics (*About → Topics*): `djazairdev`, and in the djazairdev organisation one category and one to five tags, which you suggest (CHECKLIST R6);
    - allow only squash merging, with the pull request's title as the default commit message (*Settings → General → Pull Requests*, or the commands in `starters/release-please/README.md`), and check that *Settings → Actions → General → Allow GitHub Actions to create and approve pull requests* is on;
    - protect the default branch: import `.github/rulesets/main.json` (*Settings → Rules → Rulesets → New ruleset → Import a ruleset*, or the `gh api` command in `.github/rulesets/README.md`), after the pull request that adds it is merged;
    - outside the djazairdev organisation only: turn on code scanning, Dependabot alerts and private vulnerability reporting (*Settings → Advanced Security*); repositories in the organisation get them from its security configuration;
-   - list the project in the Hub ([how](https://github.com/djazairdev/djazair.dev/blob/main/CONTRIBUTING.md#list-a-project-in-the-hub)).
+   - outside the djazairdev organisation only: list the project in the Hub ([how](https://github.com/djazairdev/djazair.dev/blob/main/CONTRIBUTING.md#list-a-project-in-the-hub)); in the organisation, the topics list it.
 4. Anything you couldn't do or check, and why.
