@@ -1,6 +1,6 @@
 # Make this repository djazairdev ready
 
-<!-- djazairdev-template: 1.0.0 -->
+<!-- djazairdev-template: 1.1.0 -->
 
 **For people:** give this file to a coding agent in the repository you want to adopt: "Follow ADOPT.md" in a repository made from the template, or "Follow https://github.com/djazairdev/project-template/blob/main/ADOPT.md" in any other. The agent works on a branch, asks before anything public, and ends with a report.
 
@@ -68,6 +68,7 @@ Wait for the answers before Step 4.
 - **C6 Changelog:** `CHANGELOG.md` from the template if there's none. If the project has releases already, add an entry for the latest as `## X.Y.Z (YYYY-MM-DD)`.
 - **C7 AGENTS.md:** from the template, filled in with the commands from Step 1 and the project's own rules. If `CLAUDE.md` or another agent file exists, keep it and make the two agree. Keep the `djazairdev-template:` line, with the version at the top of this file.
 - **C8:** `.editorconfig` and `.gitattributes` from the template, only if the project has none, and changed to match its existing style. Don't reformat existing files.
+- **C3 Ruleset:** copy `.github/rulesets/` from the template and put the names of every job that runs the tests in `required_status_checks`, as GitHub shows them (`Test (Python 3.12)` for a matrix job). List the test jobs themselves, not only a job that `needs` them: a skipped required check counts as passed. Don't import it: that is the maintainer's step (Step 8).
 - **C10:** make sure `.gitignore` covers the project's build output and local environment files such as `.env`.
 - **O1, O2:** only if the maintainer asked: `starters/release/` (see its README) or the deploy jobs in `starters/ci/static.yml`. Deploys stay off until the maintainer sets `DEPLOY_ENABLED`.
 
@@ -97,7 +98,7 @@ End with a short report for the maintainer:
    - push the branch and open a pull request (offer to do it);
    - create the drafted issues (offer to do it);
    - add the `djazairdev` topic (*About → Topics*);
-   - protect the default branch (*Settings → Rules → Rulesets*);
+   - protect the default branch: import `.github/rulesets/main.json` (*Settings → Rules → Rulesets → New ruleset → Import a ruleset*, or the `gh api` command in `.github/rulesets/README.md`), after the pull request that adds it is merged;
    - turn on code scanning, Dependabot alerts and private vulnerability reporting (*Settings → Advanced Security*);
    - list the project in the Hub ([how](https://github.com/djazairdev/djazair.dev/blob/main/CONTRIBUTING.md#list-a-project-in-the-hub)).
 4. Anything you couldn't do or check, and why.

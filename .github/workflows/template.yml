@@ -23,5 +23,17 @@ jobs:
         run: >-
           docker run --rm -v "$PWD:/repo" --workdir /repo rhysd/actionlint:1.7.12 -color
           starters/ci/*.yml starters/release/release.yml .github/workflows/*.yml
+      - name: Check the ruleset
+        run: |
+          python3 - <<'EOF'
+          import json
+          r = json.load(open('.github/rulesets/main.json'))
+          assert r['conditions']['ref_name']['include'] == ['~DEFAULT_BRANCH']
+          types = [rule['type'] for rule in r['rules']]
+          assert {'deletion', 'non_fast_forward', 'pull_request', 'required_status_checks'} <= set(types), types
+          checks = next(rule for rule in r['rules'] if rule['type'] == 'required_status_checks')['parameters']['required_status_checks']
+          assert checks and all(c['context'] and c['integration_id'] == 15368 for c in checks), checks
+          print('ruleset ok:', [c['context'] for c in checks])
+          EOF
       - name: Test release.py
         run: python3 -m unittest discover -s starters/release -v

@@ -30,7 +30,7 @@ python3 -m hub check-project owner/name --pledge
 |---|---|---|
 | C1 | Code of conduct and security policy | Repositories in the djazairdev organisation inherit them from [djazairdev/.github](https://github.com/djazairdev/.github). A project outside it copies `CODE_OF_CONDUCT.md` and `SECURITY.md` from there and puts its own contact in them. |
 | C2 | CI on every pull request | A workflow that runs the linter, the tests and the build on every pull request and every push to the default branch: start from [`starters/ci/`](starters/ci/) |
-| C3 | A protected default branch **(maintainer)** | *Settings → Rules → Rulesets*: changes go through pull requests, and CI must pass |
+| C3 | A protected default branch **(maintainer)** | [`.github/rulesets/main.json`](.github/rulesets/main.json), imported under *Settings → Rules → Rulesets*: no deleting or force-pushing the default branch, changes through pull requests, and the test jobs must pass. Templates can't carry rulesets, so each repository imports its own ([how](.github/rulesets/README.md)). |
 | C4 | Code scanning **(maintainer)** | *Settings → Advanced Security*: CodeQL's default setup, Dependabot alerts and security updates, and private vulnerability reporting, which the security policy's *Report a vulnerability* button needs |
 | C5 | Dependency updates | `.github/dependabot.yml` for GitHub Actions and the project's package managers |
 | C6 | A changelog and versions | `CHANGELOG.md` with an entry for every release, and [semantic versions](https://semver.org) tagged `v1.2.3` |

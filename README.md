@@ -37,6 +37,7 @@ The [checklist](CHECKLIST.md) has three levels:
 | [`LICENSE`](LICENSE) | MIT | Kept, with the project's copyright holder |
 | [`.editorconfig`](.editorconfig), [`.gitattributes`](.gitattributes) | Line endings and indentation | Kept |
 | [`.github/dependabot.yml`](.github/dependabot.yml) | Weekly dependency updates | Kept, with the project's package managers |
+| [`.github/rulesets/`](.github/rulesets/) | The default branch's ruleset, to import | Kept, with the project's test jobs |
 | [`starters/ci/`](starters/ci/) | CI for Python, JavaScript and TypeScript, PHP, Go, Rust, Flutter and Dart, and static sites and datasets with Cloudflare deploys | One becomes `.github/workflows/ci.yml` |
 | [`starters/release/`](starters/release/) | Releases from the changelog | Optional |
 | [`.github/workflows/template.yml`](.github/workflows/template.yml) | Checks the template itself | Deleted |
@@ -49,6 +50,7 @@ Open a pull request. Every starter must pass the [template's CI](.github/workflo
 
 ### Versions
 
+- **1.1.0** (2026-10-10): `.github/rulesets/main.json`, the default branch's ruleset, which each repository imports (C3). R4 asks for a beginner label, not 3 open issues (Hub decision D27).
 - **1.0.0** (2026-10-09): the first version.
 
 ## Licence
