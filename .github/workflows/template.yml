@@ -39,7 +39,10 @@ jobs:
           print('ruleset ok:', [c['context'] for c in checks])
           EOF
       - name: Check the issue forms parse
-        run: ruby -ryaml -e 'Dir["starters/community/*.yml"].each { |f| YAML.load_file(f); puts "ok #{f}" }'
+        run: |
+          for f in starters/community/*.yml; do
+            ruby -ryaml -e 'YAML.load_file(ARGV[0])' "$f" && echo "ok $f"
+          done
       - name: Check the release-please files
         run: |
           python3 - <<'EOF'
