@@ -38,6 +38,8 @@ jobs:
           assert merge == ['squash'], merge
           print('ruleset ok:', [c['context'] for c in checks])
           EOF
+      - name: Check the issue forms parse
+        run: ruby -ryaml -e 'Dir["starters/community/*.yml"].each { |f| YAML.load_file(f); puts "ok #{f}" }'
       - name: Check the release-please files
         run: |
           python3 - <<'EOF'
