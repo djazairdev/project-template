@@ -31,7 +31,7 @@ The agent checks the project against the [checklist](docs/CHECKLIST.md), adds wh
 - [Report a bug](https://github.com/djazairdev/project-template/issues/new?template=bug.yml)
 - [Suggest an improvement](https://github.com/djazairdev/project-template/issues/new?template=idea.yml), or 👍 the [improvements](https://github.com/djazairdev/project-template/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc) you want most
 - [Propose a new project](https://github.com/djazairdev/djazair.dev/discussions/categories/ideas) for Algeria
-- Follow [djazairdev on Facebook](https://www.facebook.com/djazairdev) for news
+- Follow djazairdev on [Facebook](https://www.facebook.com/djazairdev) and [X](https://x.com/djazairdev) for news
 
 Ask in Arabic, Tamazight, French or English. Code, docs and issue titles are in English, so everyone can search them.
 
