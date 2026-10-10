@@ -1,6 +1,6 @@
 # Make this repository djazairdev ready
 
-<!-- djazairdev-template: 1.1.0 -->
+<!-- djazairdev-template: 1.2.0 -->
 
 **For people:** give this file to a coding agent in the repository you want to adopt: "Follow ADOPT.md" in a repository made from the template, or "Follow https://github.com/djazairdev/project-template/blob/main/ADOPT.md" in any other. The agent works on a branch, asks before anything public, and ends with a report.
 
@@ -37,7 +37,7 @@ Get the template's files somewhere outside the repository, for example `git clon
 
 ## Step 2: Report what's missing
 
-Go through [CHECKLIST.md](https://github.com/djazairdev/project-template/blob/main/CHECKLIST.md) item by item (R1–R7, C1–C10, O1–O4) and show the maintainer a table: the item, *done*, *missing* or *partly*, and what you would do. Mark the items only a maintainer can do.
+Go through [CHECKLIST.md](https://github.com/djazairdev/project-template/blob/main/CHECKLIST.md) item by item (R1–R7, C1–C11, O1–O3) and show the maintainer a table: the item, *done*, *missing* or *partly*, and what you would do. Mark the items only a maintainer can do.
 
 ## Step 3: Ask
 
@@ -47,7 +47,8 @@ Ask only what you couldn't find, in one message:
 - One sentence on how the project relates to Algeria, if the README doesn't say.
 - Whether the maintainers make the pledge: replying to newcomers' pull requests within 7 days. The Hub requires it.
 - For a project outside the djazairdev organisation: the contact for conduct and security reports, to put in the copied files.
-- Which optional items they want (releases, deploys).
+- The latest released version, if the project has releases but no tags you can see.
+- Which optional items they want (deploys, an Arabic README).
 
 Wait for the answers before Step 4.
 
@@ -55,6 +56,7 @@ Wait for the answers before Step 4.
 
 - **R1 Licence:** add the chosen licence's exact, unchanged text as `LICENSE` (MIT from the template, with the year and the holder). For data under CC0, take the legal code from https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt as `LICENSE-data`, and say in the README which licence covers what.
 - **R3 README:** if there is none, start from `README.template.md`. If there is one, keep it and add only what's missing: one line on the link to Algeria near the top, a quick start, a *Contributing* section that points to the beginner issues and CONTRIBUTING, and the licence.
+- **C11 Badges:** put the badges from `README.template.md` under the README's title, with `OWNER/NAME` replaced, and keep any the project already has. The CI badge names the CI workflow's file; the feature request badge links to the issue form for ideas (`idea.yml`, inherited in the organisation). Drop a badge only if what it shows doesn't exist, and say so.
 - **R3 CONTRIBUTING:** start from the template's `CONTRIBUTING.md`, or merge it into the existing file. Fill in the real setup and test commands from Step 1, and replace `OWNER/NAME`.
 - **R5 Pledge:** keep the *Our pledge* section in CONTRIBUTING if the maintainers agreed.
 - **R4 Labels for newcomers:** check that issues are on and the label `good first issue` or `help wanted` exists; if neither does, list it for the maintainer to create. No number of issues is required, but offer to draft 2 or 3 from real gaps you saw, so newcomers have somewhere to start: a missing test, a confusing error message, a doc to write, a small feature in the project's roadmap. Each has a title, the context, where in the code to start, what *done* means, and a line `You'll need: …`. Show the drafts; create them only when the maintainer says yes, labelled `good first issue` (small, well defined) or `help wanted`.
@@ -65,12 +67,13 @@ Wait for the answers before Step 4.
 
 - **C2 CI:** if the project has no CI, copy the matching file from the template's `starters/ci/` to `.github/workflows/ci.yml` and change its commands to the ones that passed in Step 1. For several languages, combine the jobs. If CI exists, compare it and suggest only what it lacks: running on pull requests, read-only permissions, the tests.
 - **C5 Dependabot:** `.github/dependabot.yml` from the template, with the project's package managers uncommented and the others deleted.
-- **C6 Changelog:** `CHANGELOG.md` from the template if there's none. If the project has releases already, add an entry for the latest as `## X.Y.Z (YYYY-MM-DD)`.
+- **C6 Releases:** set up release-please as [`starters/release-please/README.md`](https://github.com/djazairdev/project-template/blob/main/starters/release-please/README.md) says: copy `release.yml` and `pr-title.yml` to `.github/workflows/` and the two JSON files to the root, set the `release-type` for the project's language, and put the latest released version (the highest `vX.Y.Z` tag) in `.release-please-manifest.json`, or keep `0.0.0`. The CI workflow must be `ci.yml` with a `workflow_dispatch` trigger. Use the template's `CHANGELOG.md` if there's none; keep an existing one's entries, with its header changed to say release-please writes new ones. If the project has its own release script or workflow, show the maintainer what release-please replaces and ask before removing anything. Add `PR title` to the ruleset's required checks.
+- **CONTRIBUTING, AGENTS.md:** keep the template's lines on Conventional Commit pull request titles and squash merges, and remove any instruction to edit the changelog or the version by hand.
 - **C7 AGENTS.md:** from the template, filled in with the commands from Step 1 and the project's own rules. If `CLAUDE.md` or another agent file exists, keep it and make the two agree. Keep the `djazairdev-template:` line, with the version at the top of this file.
 - **C8:** `.editorconfig` and `.gitattributes` from the template, only if the project has none, and changed to match its existing style. Don't reformat existing files.
 - **C3 Ruleset:** copy `.github/rulesets/` from the template and put the names of every job that runs the tests in `required_status_checks`, as GitHub shows them (`Test (Python 3.12)` for a matrix job). List the test jobs themselves, not only a job that `needs` them: a skipped required check counts as passed. Don't import it: that is the maintainer's step (Step 8).
 - **C10:** make sure `.gitignore` covers the project's build output and local environment files such as `.env`.
-- **O1, O2:** only if the maintainer asked: `starters/release/` (see its README) or the deploy jobs in `starters/ci/static.yml`. Deploys stay off until the maintainer sets `DEPLOY_ENABLED`.
+- **O1:** only if the maintainer asked: the deploy jobs in `starters/ci/static.yml`. Deploys stay off until the maintainer sets `DEPLOY_ENABLED`.
 
 ## Step 6: Tidy up a repository made from the template
 
@@ -98,6 +101,7 @@ End with a short report for the maintainer:
    - push the branch and open a pull request (offer to do it);
    - create the drafted issues (offer to do it);
    - add the `djazairdev` topic (*About → Topics*);
+   - allow only squash merging, with the pull request's title as the default commit message (*Settings → General → Pull Requests*, or the commands in `starters/release-please/README.md`), and check that *Settings → Actions → General → Allow GitHub Actions to create and approve pull requests* is on;
    - protect the default branch: import `.github/rulesets/main.json` (*Settings → Rules → Rulesets → New ruleset → Import a ruleset*, or the `gh api` command in `.github/rulesets/README.md`), after the pull request that adds it is merged;
    - outside the djazairdev organisation only: turn on code scanning, Dependabot alerts and private vulnerability reporting (*Settings → Advanced Security*); repositories in the organisation get them from its security configuration;
    - list the project in the Hub ([how](https://github.com/djazairdev/djazair.dev/blob/main/CONTRIBUTING.md#list-a-project-in-the-hub)).

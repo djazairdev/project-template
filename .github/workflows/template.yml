@@ -1,4 +1,4 @@
-# Checks the template itself: every workflow starter passes actionlint, and release.py's tests pass.
+# Checks the template itself: every workflow starter passes actionlint, and the ruleset and release-please files are well formed.
 # A project made from the template deletes this file (ADOPT.md, step 6).
 name: Template
 
@@ -22,7 +22,7 @@ jobs:
       - name: Lint the workflows
         run: >-
           docker run --rm -v "$PWD:/repo" --workdir /repo rhysd/actionlint:1.7.12 -color
-          starters/ci/*.yml starters/release/release.yml .github/workflows/*.yml
+          starters/ci/*.yml starters/release-please/*.yml .github/workflows/*.yml
       - name: Check the ruleset
         run: |
           python3 - <<'EOF'
@@ -33,7 +33,18 @@ jobs:
           assert {'deletion', 'non_fast_forward', 'pull_request', 'required_status_checks'} <= set(types), types
           checks = next(rule for rule in r['rules'] if rule['type'] == 'required_status_checks')['parameters']['required_status_checks']
           assert checks and all(c['context'] and c['integration_id'] == 15368 for c in checks), checks
+          assert 'PR title' in [c['context'] for c in checks], checks
+          merge = next(rule for rule in r['rules'] if rule['type'] == 'pull_request')['parameters']['allowed_merge_methods']
+          assert merge == ['squash'], merge
           print('ruleset ok:', [c['context'] for c in checks])
           EOF
-      - name: Test release.py
-        run: python3 -m unittest discover -s starters/release -v
+      - name: Check the release-please files
+        run: |
+          python3 - <<'EOF'
+          import json, re
+          config = json.load(open('starters/release-please/release-please-config.json'))
+          manifest = json.load(open('starters/release-please/.release-please-manifest.json'))
+          assert set(config['packages']) == set(manifest), (config['packages'], manifest)
+          assert all(re.fullmatch(r'\d+\.\d+\.\d+', v) for v in manifest.values()), manifest
+          print('release-please ok:', {k: p['release-type'] for k, p in config['packages'].items()})
+          EOF

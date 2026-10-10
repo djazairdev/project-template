@@ -33,17 +33,17 @@ python3 -m hub check-project owner/name --pledge
 | C3 | A protected default branch **(maintainer)** | [`.github/rulesets/main.json`](.github/rulesets/main.json), imported under *Settings → Rules → Rulesets*: no deleting or force-pushing the default branch, changes through pull requests, and the test jobs must pass. Templates can't carry rulesets, so each repository imports its own ([how](.github/rulesets/README.md)). |
 | C4 | Code scanning and private vulnerability reporting | **In the djazairdev organisation: automatic.** The organisation's security configuration is enforced on every repository, new ones included: CodeQL's default setup, Dependabot alerts and security updates, the dependency graph, secret scanning with push protection, and private vulnerability reporting, which the security policy's *Report a vulnerability* button needs. **Outside it (maintainer):** turn the same on under *Settings → Advanced Security*. A repository transferred into the organisation gets the configuration once an owner applies it. |
 | C5 | Dependency updates | `.github/dependabot.yml` for GitHub Actions and the project's package managers |
-| C6 | A changelog and versions | `CHANGELOG.md` with an entry for every release, and [semantic versions](https://semver.org) tagged `v1.2.3` |
+| C6 | Versions and releases | [semantic versions](https://semver.org) tagged `v1.2.3`, with a GitHub release and a `CHANGELOG.md` entry for each, made by release-please from Conventional Commit pull request titles: [`starters/release-please/`](starters/release-please/). **(maintainer)** Allow only squash merging, with the pull request's title as the commit message. |
 | C7 | Instructions for coding agents | `AGENTS.md`: how to build and test the project, and its rules |
 | C8 | Consistent files | `.editorconfig` and `.gitattributes`, so editors and operating systems agree on line endings and indentation |
 | C9 | Issue forms | Repositories in the organisation inherit a bug form and an idea form. A repository that adds a form of its own loses the inherited ones, so it copies those it still wants. A label a form sets must exist in the repository. |
 | C10 | No secrets in the repository | Secrets live in GitHub's *Settings → Secrets*, never in files; `.gitignore` covers local environment files such as `.env` |
+| C11 | Badges | Under the README's title: CI status, the latest release, the licence, open good first issues, a link to request a feature, and *djazairdev ready*. [`README.template.md`](README.template.md) has them, with `OWNER/NAME` to replace. |
 
 ## Optional
 
 | # | Item | When |
 |---|---|---|
-| O1 | Releases from the changelog | When people download or depend on versions: [`starters/release/`](starters/release/) tags `v1.2.3` and creates a GitHub release from each new changelog entry |
-| O2 | Deploys from CI | For a site or an API: deploy only from the default branch, after CI passes, behind a repository variable such as `DEPLOY_ENABLED` so deploys can be paused without touching secrets ([`starters/ci/static.yml`](starters/ci/static.yml)) |
-| O3 | An Arabic README | Once a fluent speaker has reviewed it |
-| O4 | Discussions **(maintainer)** | When questions outgrow issues |
+| O1 | Deploys from CI | For a site or an API: deploy only from the default branch, after CI passes, behind a repository variable such as `DEPLOY_ENABLED` so deploys can be paused without touching secrets ([`starters/ci/static.yml`](starters/ci/static.yml)) |
+| O2 | An Arabic README | Once a fluent speaker has reviewed it |
+| O3 | Discussions **(maintainer)** | When questions outgrow issues |

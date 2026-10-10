@@ -1,6 +1,6 @@
 # Instructions for coding agents
 
-<!-- djazairdev-template: 1.1.0 -->
+<!-- djazairdev-template: 1.2.0 -->
 
 This file tells coding agents (Claude Code, Codex, Cursor, Copilot and others) how to work in this repository. People may find it useful too.
 
@@ -21,7 +21,8 @@ This file tells coding agents (Claude Code, Codex, Cursor, Copilot and others) h
 
 - Run the tests and the linter before you say a change is done, and say if they fail.
 - Keep each change small and focused on one thing; match the code around it.
-- Add a test when you change behaviour, and a line to `CHANGELOG.md` under *Unreleased* when users will notice.
+- Add a test when you change behaviour.
+- Title pull requests as Conventional Commits (`fix: …`, `feat: …`, `feat!: …` for a breaking change, `docs: …`): the version and the changelog are made from them. Don't edit `CHANGELOG.md` or the version by hand.
 - Never commit secrets, tokens, `.env` files or personal data.
 - Don't push, merge, publish a release, deploy, or change repository settings unless the maintainer asks.
 - Don't change the licence, and don't add dependencies without saying why.

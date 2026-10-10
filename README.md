@@ -21,8 +21,8 @@ Run it again later to pick up changes to the template: `AGENTS.md` records the v
 The [checklist](CHECKLIST.md) has three levels:
 
 - **Required:** the Hub's seven checks. An open-source licence, a commit in the last 90 days, a README and a CONTRIBUTING file, the `good first issue` or `help wanted` label, the pledge to reply to newcomers' pull requests within 7 days, the `djazairdev` topic, and a link to Algeria.
-- **Recommended:** CI on every pull request, a protected default branch, code scanning, dependency updates, a changelog with semantic versions, `AGENTS.md`, and consistent files.
-- **Optional:** releases from the changelog, deploys from CI, an Arabic README, Discussions.
+- **Recommended:** CI on every pull request, a protected default branch, code scanning, dependency updates, automatic semantic versions and releases, `AGENTS.md`, consistent files, and README badges.
+- **Optional:** deploys from CI, an Arabic README, Discussions.
 
 ## What's here
 
@@ -30,16 +30,16 @@ The [checklist](CHECKLIST.md) has three levels:
 |---|---|---|
 | [`ADOPT.md`](ADOPT.md) | The prompt for coding agents | Deleted after use |
 | [`CHECKLIST.md`](CHECKLIST.md) | What "djazairdev ready" means, item by item | Deleted after use |
-| [`README.template.md`](README.template.md) | A README to fill in | Becomes `README.md` |
+| [`README.template.md`](README.template.md) | A README to fill in, with the badges | Becomes `README.md` |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to set up, test and send a pull request, with the pledge | Kept, filled in |
 | [`AGENTS.md`](AGENTS.md) | Instructions for coding agents working in the project | Kept, filled in |
-| [`CHANGELOG.md`](CHANGELOG.md) | Versions, newest first | Kept |
+| [`CHANGELOG.md`](CHANGELOG.md) | Versions, newest first, written by release-please | Kept |
 | [`LICENSE`](LICENSE) | MIT | Kept, with the project's copyright holder |
 | [`.editorconfig`](.editorconfig), [`.gitattributes`](.gitattributes) | Line endings and indentation | Kept |
 | [`.github/dependabot.yml`](.github/dependabot.yml) | Weekly dependency updates | Kept, with the project's package managers |
 | [`.github/rulesets/`](.github/rulesets/) | The default branch's ruleset, to import | Kept, with the project's test jobs |
 | [`starters/ci/`](starters/ci/) | CI for Python, JavaScript and TypeScript, PHP, Go, Rust, Flutter and Dart, and static sites and datasets with Cloudflare deploys | One becomes `.github/workflows/ci.yml` |
-| [`starters/release/`](starters/release/) | Releases from the changelog | Optional |
+| [`starters/release-please/`](starters/release-please/) | Semantic versions, tags, GitHub releases and the changelog, from pull request titles | Workflows to `.github/workflows/`, JSON files to the root |
 | [`.github/workflows/template.yml`](.github/workflows/template.yml) | Checks the template itself | Deleted |
 
 The code of conduct, the security policy, the support page and the issue forms aren't here: every repository in the organisation inherits them from [djazairdev/.github](https://github.com/djazairdev/.github). A project outside the organisation copies them from there.
@@ -50,6 +50,7 @@ Open a pull request. Every starter must pass the [template's CI](.github/workflo
 
 ### Versions
 
+- **1.2.0** (2026-10-10): releases with release-please (C6) replace the changelog script: Conventional Commit pull request titles, checked by `pr-title.yml`; squash merges only; the ruleset requires `PR title`. README badges (C11). The optional items are renumbered O1–O3.
 - **1.1.0** (2026-10-10): `.github/rulesets/main.json`, the default branch's ruleset, which each repository imports (C3). R4 asks for a beginner label, not 3 open issues (Hub decision D27).
 - **1.0.0** (2026-10-09): the first version.
 

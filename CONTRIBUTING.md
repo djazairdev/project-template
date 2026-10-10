@@ -30,10 +30,19 @@ cd NAME
 1. Fork the repository and create a branch from the default branch.
 2. Make one change per pull request, with a test when you change behaviour.
 3. Run the tests and the linter.
-4. Add a line to `CHANGELOG.md` under *Unreleased* if users will notice the change.
-5. Open the pull request, say what it changes and why, and link the issue (`Closes #12`).
+4. Open the pull request, say what it changes and why, and link the issue (`Closes #12`).
+5. Give it a title in the [Conventional Commits](https://www.conventionalcommits.org) form, `type: what it does`:
 
-CI runs the tests on every pull request. A maintainer reviews it; we may ask for changes, which is normal.
+   | Title | When |
+   |---|---|
+   | `fix: wrong code for Adrar` | A bug fix |
+   | `feat: add postal codes` | A new feature |
+   | `feat!: rename the code field` | A change that could break someone who uses the project |
+   | `docs: explain the setup` | Documentation only; also `test:`, `ci:`, `chore:`, `refactor:`, `build:`, `style:`, `perf:` |
+
+   A scope in brackets is optional: `fix(api): …`. A check fails until the title fits, and you can edit the title at any time.
+
+CI runs the tests on every pull request. A maintainer reviews it; we may ask for changes, which is normal. Pull requests are squash-merged, so the title becomes the commit's message, and the changelog and the next version are made from it: don't edit `CHANGELOG.md` yourself.
 
 ## Our pledge
 
