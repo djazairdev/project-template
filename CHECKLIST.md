@@ -38,7 +38,7 @@ python3 -m hub check-project owner/name --pledge
 | C8 | Consistent files | `.editorconfig` and `.gitattributes`, so editors and operating systems agree on line endings and indentation |
 | C9 | Issue forms | Repositories in the organisation inherit a bug form and an idea form. A repository that adds a form of its own loses the inherited ones, so it copies those it still wants. A label a form sets must exist in the repository. |
 | C10 | No secrets in the repository | Secrets live in GitHub's *Settings → Secrets*, never in files; `.gitignore` covers local environment files such as `.env` |
-| C11 | Badges | Under the README's title: CI status, the latest release, the licence, open good first issues, a link to request a feature, and *djazairdev ready*. [`README.template.md`](README.template.md) has them, with `OWNER/NAME` to replace. |
+| C11 | Badges | Under the README's title: CI status, the latest release, open good first issues, and a link to request a feature. [`README.template.md`](README.template.md) has them, with `OWNER/NAME` to replace. |
 
 ## Optional
 
