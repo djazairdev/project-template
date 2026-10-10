@@ -2,7 +2,7 @@
 
 [![Template CI](https://github.com/djazairdev/project-template/actions/workflows/template.yml/badge.svg)](https://github.com/djazairdev/project-template/actions/workflows/template.yml)
 [![Good first issues](https://img.shields.io/github/issues/djazairdev/project-template/good%20first%20issue?label=good%20first%20issues&color=7057ff)](https://github.com/djazairdev/project-template/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-[![Ideas](https://img.shields.io/github/issues/djazairdev/project-template/enhancement?label=ideas&color=a2eeef)](https://github.com/djazairdev/project-template/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc)
+[![Improvements](https://img.shields.io/github/issues/djazairdev/project-template/enhancement?label=improvements&color=a2eeef)](https://github.com/djazairdev/project-template/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc)
 
 [djazairdev](https://github.com/djazairdev) wants every Algerian developer to be able to make a first open-source contribution to an active local project. This template makes a project ready for them: beginner issues that are easy to find, clear steps to contribute, a reply within 7 days, and a listing in the [djazair.dev Hub](https://djazair.dev/en/hub/).
 
@@ -23,17 +23,22 @@ The agent checks the project against the [checklist](docs/CHECKLIST.md), adds wh
 1. Pick a project in the [Hub](https://djazair.dev/en/hub/), or an issue labelled [good first issue](https://github.com/djazairdev/project-template/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) here.
 2. Comment on the issue to say you're working on it.
 3. Follow [CONTRIBUTING.md](CONTRIBUTING.md) and open a pull request.
-4. A maintainer replies within 7 days.
+4. We reply to newcomers' pull requests within 7 days. A review or a merge may take longer.
 
 ## Feedback
 
 - [Ask a question](https://github.com/orgs/djazairdev/discussions/categories/q-a)
 - [Report a bug](https://github.com/djazairdev/project-template/issues/new?template=bug.yml)
-- [Suggest an idea](https://github.com/djazairdev/project-template/issues/new?template=idea.yml), or 👍 the [ideas](https://github.com/djazairdev/project-template/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc) you want most
+- [Suggest an improvement](https://github.com/djazairdev/project-template/issues/new?template=idea.yml), or 👍 the [improvements](https://github.com/djazairdev/project-template/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc) you want most
+- [Propose a new project](https://github.com/djazairdev/djazair.dev/discussions/categories/ideas) for Algeria
 - Follow [djazairdev on Facebook](https://www.facebook.com/djazairdev) for news
 
-Please write in English.
+Ask in Arabic, Tamazight, French or English. Code, docs and issue titles are in English, so everyone can search them.
 
 ## Licence
 
 [MIT](LICENSE). Projects made from the template choose their own.
+
+---
+
+Part of [djazairdev](https://github.com/djazairdev): growing Algeria's open-source community through useful projects, welcoming first contributions and collaboration. Everyone follows our [code of conduct](https://github.com/djazairdev/.github/blob/main/CODE_OF_CONDUCT.md).

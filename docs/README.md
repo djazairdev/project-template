@@ -28,6 +28,7 @@ Open a pull request. Every starter must pass the [template's CI](../.github/work
 
 ## Versions
 
+- **1.4.0** (2026-10-10): the README welcomes questions in Arabic, Tamazight, French or English, as the code of conduct does, with code, docs and issue titles in English. *Suggest an improvement* (the project's issues) and *Propose a new project* (djazair.dev's Ideas) are separate, and the badge counts improvements. The pledge line says a review or a merge may take longer than the 7-day reply. The licence is the project's own, not always MIT. An optional example under *Quick start*, the ways to help without code, and a closing djazairdev line with the Hub.
 - **1.3.0** (2026-10-10): a short README that leads to a first contribution: badges (CI, latest release, good first issues, ideas by votes), quick start, *Make your first contribution*, *Feedback* (Discussions, bug and idea forms, the Facebook Page, in English), licence. Long docs go in `docs/`. The template's own docs moved to `docs/`.
 - **1.2.0** (2026-10-10): releases with release-please (C6) replace the changelog script: Conventional Commit pull request titles, checked by `pr-title.yml`; squash merges only; the ruleset requires `PR title`. README badges (C11). The optional items are renumbered O1–O3.
 - **1.1.0** (2026-10-10): `.github/rulesets/main.json`, the default branch's ruleset, which each repository imports (C3). R4 asks for a beginner label, not 3 open issues (Hub decision D27).

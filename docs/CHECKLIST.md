@@ -38,7 +38,7 @@ python3 -m hub check-project owner/name --pledge
 | C8 | Consistent files | `.editorconfig` and `.gitattributes`, so editors and operating systems agree on line endings and indentation |
 | C9 | Issue forms | Repositories in the organisation inherit a bug form and an idea form. A repository that adds a form of its own loses the inherited ones, so it copies those it still wants. A label a form sets must exist in the repository. |
 | C10 | No secrets in the repository | Secrets live in GitHub's *Settings → Secrets*, never in files; `.gitignore` covers local environment files such as `.env` |
-| C11 | A short README that leads to a first contribution | The shape of [`README.template.md`](../README.template.md): badges for CI, the latest release, open good first issues and open ideas; what the project does and its link to Algeria; *Quick start*; *Make your first contribution*; *Feedback* (questions in Discussions, bugs and ideas in issues, in English); the licence. Longer docs go in `docs/`. |
+| C11 | A short README that leads to a first contribution | The shape of [`README.template.md`](../README.template.md): badges for CI, the latest release, open good first issues and open improvements; what the project does and its link to Algeria; *Quick start*, with an example, screenshot or demo if there is one; *Make your first contribution*, with the ways to help without code that the project accepts; *Feedback* (questions in Discussions, bugs and improvements in issues, new projects in djazair.dev's Ideas; any of Arabic, Tamazight, French and English); the project's licence; and the djazairdev line. Longer docs go in `docs/`. |
 
 ## Optional
 
