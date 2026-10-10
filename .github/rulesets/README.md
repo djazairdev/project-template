@@ -1,6 +1,6 @@
 # The default branch's ruleset
 
-[`main.json`](main.json) protects the default branch (C3 in the [checklist](https://github.com/djazairdev/project-template/blob/main/CHECKLIST.md)). GitHub doesn't copy rulesets into a repository made from a template, and the djazairdev organisation's plan has no organisation-wide rulesets, so each repository keeps this file and imports it.
+[`main.json`](main.json) protects the default branch (C3 in the [checklist](https://github.com/djazairdev/project-template/blob/main/docs/CHECKLIST.md)). GitHub doesn't copy rulesets into a repository made from a template, and the djazairdev organisation's plan has no organisation-wide rulesets, so each repository keeps this file and imports it.
 
 ## What it does
 

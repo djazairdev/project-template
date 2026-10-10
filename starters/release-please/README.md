@@ -1,6 +1,6 @@
 # Versions and releases with release-please
 
-C6 in the [checklist](../../CHECKLIST.md). Every djazairdev project versions its releases the same way: [semantic versions](https://semver.org) tagged `v1.2.3`, worked out by [release-please](https://github.com/googleapis/release-please) from pull request titles. Nobody picks a version number or edits the changelog by hand.
+C6 in the [checklist](../../docs/CHECKLIST.md). Every djazairdev project versions its releases the same way: [semantic versions](https://semver.org) tagged `v1.2.3`, worked out by [release-please](https://github.com/googleapis/release-please) from pull request titles. Nobody picks a version number or edits the changelog by hand.
 
 ## How it works
 

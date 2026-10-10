@@ -1,14 +1,14 @@
 # Make this repository djazairdev ready
 
-<!-- djazairdev-template: 1.2.0 -->
+<!-- djazairdev-template: 1.3.0 -->
 
-**For people:** give this file to a coding agent in the repository you want to adopt: "Follow ADOPT.md" in a repository made from the template, or "Follow https://github.com/djazairdev/project-template/blob/main/ADOPT.md" in any other. The agent works on a branch, asks before anything public, and ends with a report.
+**For people:** give this file to a coding agent in the repository you want to adopt: "Follow docs/ADOPT.md" in a repository made from the template, or "Follow https://github.com/djazairdev/project-template/blob/main/docs/ADOPT.md" in any other. The agent works on a branch, asks before anything public, and ends with a report.
 
 **For the agent:** the rest of this file is your task. Read it all before you start.
 
 ---
 
-You are making this repository *djazairdev ready*: meeting the [checklist](https://github.com/djazairdev/project-template/blob/main/CHECKLIST.md) of the djazairdev organisation, so the project can be listed in the djazair.dev Hub and newcomers can contribute. The template's files are at https://github.com/djazairdev/project-template; the organisation's default community files are at https://github.com/djazairdev/.github.
+You are making this repository *djazairdev ready*: meeting the [checklist](https://github.com/djazairdev/project-template/blob/main/docs/CHECKLIST.md) of the djazairdev organisation, so the project can be listed in the djazair.dev Hub and newcomers can contribute. The template's files are at https://github.com/djazairdev/project-template; the organisation's default community files are at https://github.com/djazairdev/.github.
 
 ## Rules
 
@@ -30,14 +30,14 @@ Find out, from the files and by running commands:
 - What it does and who it's for, and how it relates to Algeria (check R7).
 - Its languages, frameworks and package managers; how to install, run, test, lint and build it. Run each command and note what passes.
 - Whether it is on GitHub, as `owner/name`, and whether the owner is the `djazairdev` organisation (`git remote -v`).
-- Whether it was just made from the template: `ADOPT.md`, `CHECKLIST.md` and `README.template.md` are in its root.
-- Whether it adopted the template before: an `AGENTS.md` with a `djazairdev-template:` version. If so, this run is an update: compare that version with the one at the top of this file and apply only what changed (the template's README lists the versions).
+- Whether it was just made from the template: `README.template.md` is in its root and `docs/ADOPT.md` exists.
+- Whether it adopted the template before: an `AGENTS.md` with a `djazairdev-template:` version. If so, this run is an update: compare that version with the one at the top of this file and apply only what changed (the template's [`docs/README.md`](https://github.com/djazairdev/project-template/blob/main/docs/README.md#versions) lists the versions).
 
 Get the template's files somewhere outside the repository, for example `git clone --depth 1 https://github.com/djazairdev/project-template "$TMPDIR/project-template"`.
 
 ## Step 2: Report what's missing
 
-Go through [CHECKLIST.md](https://github.com/djazairdev/project-template/blob/main/CHECKLIST.md) item by item (R1–R7, C1–C11, O1–O3) and show the maintainer a table: the item, *done*, *missing* or *partly*, and what you would do. Mark the items only a maintainer can do.
+Go through [CHECKLIST.md](https://github.com/djazairdev/project-template/blob/main/docs/CHECKLIST.md) item by item (R1–R7, C1–C11, O1–O3) and show the maintainer a table: the item, *done*, *missing* or *partly*, and what you would do. Mark the items only a maintainer can do.
 
 ## Step 3: Ask
 
@@ -55,8 +55,7 @@ Wait for the answers before Step 4.
 ## Step 4: Add the required files
 
 - **R1 Licence:** add the chosen licence's exact, unchanged text as `LICENSE` (MIT from the template, with the year and the holder). For data under CC0, take the legal code from https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt as `LICENSE-data`, and say in the README which licence covers what.
-- **R3 README:** if there is none, start from `README.template.md`. If there is one, keep it and add only what's missing: one line on the link to Algeria near the top, a quick start, a *Contributing* section that points to the beginner issues and CONTRIBUTING, and the licence.
-- **C11 Badges:** put the badges from `README.template.md` under the README's title, with `OWNER/NAME` replaced, and keep any the project already has. The CI badge names the CI workflow's file; the feature request badge links to the issue form for ideas (`idea.yml`, inherited in the organisation). Drop a badge only if what it shows doesn't exist, and say so.
+- **R3, C11 README:** the README's job is to lead a newcomer to a first contribution, so keep it short, in the shape of `README.template.md`: the badges, one or two sentences on what the project does and its link to Algeria, *Quick start*, *Make your first contribution*, *Feedback* and *Licence*. If there is no README, fill in the template's. If there is one, keep its content: propose the new shape, with longer sections (usage, API, architecture, deployment, FAQ) moved to files in `docs/` and linked, and show the maintainer the result before you commit it (rule 2). Replace `OWNER/NAME` everywhere. The CI badge names the CI workflow's file. Outside the djazairdev organisation, link the project's own Discussions or support channel in *Feedback* instead of djazairdev's. Keep the Facebook line commented out until the organisation's page exists. If the project has no `docs/`, drop the line that points to it.
 - **R3 CONTRIBUTING:** start from the template's `CONTRIBUTING.md`, or merge it into the existing file. Fill in the real setup and test commands from Step 1, and replace `OWNER/NAME`.
 - **R5 Pledge:** keep the *Our pledge* section in CONTRIBUTING if the maintainers agreed.
 - **R4 Labels for newcomers:** check that issues are on and the label `good first issue` or `help wanted` exists; if neither does, list it for the maintainer to create. No number of issues is required, but offer to draft 2 or 3 from real gaps you saw, so newcomers have somewhere to start: a missing test, a confusing error message, a doc to write, a small feature in the project's roadmap. Each has a title, the context, where in the code to start, what *done* means, and a line `You'll need: …`. Show the drafts; create them only when the maintainer says yes, labelled `good first issue` (small, well defined) or `help wanted`.
@@ -77,7 +76,7 @@ Wait for the answers before Step 4.
 
 ## Step 6: Tidy up a repository made from the template
 
-If the repository came from the template: rename `README.template.md` to `README.md` (replacing the template's README), delete `ADOPT.md`, `CHECKLIST.md`, `starters/` and `.github/workflows/template.yml`, and make sure nothing still links to them.
+If the repository came from the template: rename `README.template.md` to `README.md` (replacing the template's README), delete the template's `docs/README.md`, `docs/ADOPT.md` and `docs/CHECKLIST.md`, `starters/` and `.github/workflows/template.yml`, and make sure nothing still links to them.
 
 ## Step 7: Check
 
