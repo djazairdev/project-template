@@ -16,13 +16,21 @@ C6 in the [checklist](../../docs/CHECKLIST.md). Every djazairdev project version
    Before 1.0.0, a breaking change raises the minor version instead (`bump-minor-pre-major`).
 2. **Pull requests are squash-merged,** so each one lands on `main` as a single commit named by its title, which is what release-please reads.
 3. **On every push to `main`,** `release.yml` keeps one pull request open, *chore(main): release X.Y.Z*, with the next version and the new `CHANGELOG.md` entry. It updates as more changes land.
-4. **Merging that pull request** tags `vX.Y.Z` and publishes the GitHub release, with the changelog entry as its notes. Release when you choose: the release pull request can wait.
+4. **To release, a maintainer approves the release pull request's checks, then merges it.** release-please opens it with `GITHUB_TOKEN`, as `github-actions[bot]`, and GitHub holds the runs on a bot's pull request until someone with write access approves them: in its merge box, select *Approve workflows to run*. When CI and `PR title` pass, merge it. Merging tags `vX.Y.Z` and publishes the GitHub release, with the changelog entry as its notes. Release when you choose: the release pull request can wait.
 
-Pull requests made with `GITHUB_TOKEN` start no workflows, so `release.yml` starts CI and the title check on the release pull request itself. Its checks then pass the ruleset like any other pull request.
+Each time release-please updates the release pull request, its new runs wait again, so approve them just before you merge. From the command line, with the pull request's number:
+
+```bash
+SHA=$(gh pr view NUMBER --repo OWNER/NAME --json headRefOid --jq .headRefOid)
+gh run list --repo OWNER/NAME --commit "$SHA" --status action_required --json databaseId --jq '.[].databaseId' \
+  | xargs -I{} gh api --method POST repos/OWNER/NAME/actions/runs/{}/approve
+```
+
+Starting CI on the release branch by hand doesn't replace the approval: GitHub doesn't count the checks of a `workflow_dispatch` run for a pull request, so the ruleset still blocks it.
 
 ## Set it up
 
-1. Copy `release.yml` and `pr-title.yml` to `.github/workflows/`, and `release-please-config.json` and `.release-please-manifest.json` to the repository's root. The CI workflow must be `.github/workflows/ci.yml` with `workflow_dispatch` among its triggers, as the starters have.
+1. Copy `release.yml` and `pr-title.yml` to `.github/workflows/`, and `release-please-config.json` and `.release-please-manifest.json` to the repository's root.
 2. Set `release-type` in `release-please-config.json` for the project, so release-please also updates its version file:
 
    | Project | `release-type` | Updates |
@@ -44,7 +52,11 @@ Pull requests made with `GITHUB_TOKEN` start no workflows, so `release.yml` star
    gh api -X PATCH repos/OWNER/NAME -f squash_merge_commit_title=PR_TITLE -f squash_merge_commit_message=PR_BODY
    ```
 
-6. **(maintainer)** Check that *Settings → Actions → General → Allow GitHub Actions to create and approve pull requests* is on. It is for djazairdev's repositories.
+6. **(maintainer)** Check that *Settings → Actions → General → Allow GitHub Actions to create and approve pull requests* is on, so release-please can open its pull request. It is for djazairdev's repositories. It doesn't start that pull request's checks: they still wait for approval.
+
+## Checks without the approval
+
+GitHub starts the runs by itself when the release pull request is opened with a token other than `GITHUB_TOKEN`: a GitHub App's installation token, made in the job with [`actions/create-github-app-token`](https://github.com/actions/create-github-app-token), or a personal access token, given to release-please as `token`. The tags it makes then start workflows too. The starter keeps `GITHUB_TOKEN`, so the repository holds no secret that can write to it; the cost is one click per release.
 
 ## Publishing a package
 
