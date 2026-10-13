@@ -30,15 +30,9 @@ The agent checks the project against the [checklist](docs/CHECKLIST.md), adds wh
 - [Ask a question](https://github.com/orgs/djazairdev/discussions/categories/q-a)
 - [Report a bug](https://github.com/djazairdev/project-template/issues/new?template=bug.yml)
 - [Suggest an improvement](https://github.com/djazairdev/project-template/issues/new?template=idea.yml), or 👍 the [improvements](https://github.com/djazairdev/project-template/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc) you want most
-- [Propose a new project](https://github.com/djazairdev/djazair.dev/discussions/categories/ideas) for Algeria
+- [Propose a new project](https://github.com/djazairdev/djazair.dev/discussions/categories/ideas)
 - Follow djazairdev on [Facebook](https://www.facebook.com/djazairdev) and [X](https://x.com/djazairdev) for news
-
-Ask in Arabic, Tamazight, French or English. Code, docs and issue titles are in English, so everyone can search them.
 
 ## Licence
 
 [MIT](LICENSE). Projects made from the template choose their own.
-
----
-
-Part of [djazairdev](https://github.com/djazairdev): growing Algeria's open-source community through useful projects, welcoming first contributions and collaboration. Everyone follows our [code of conduct](https://github.com/djazairdev/.github/blob/main/CODE_OF_CONDUCT.md).
