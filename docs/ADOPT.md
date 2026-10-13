@@ -1,6 +1,6 @@
 # Make this repository djazairdev ready
 
-<!-- djazairdev-template: 1.5.3 -->
+<!-- djazairdev-template: 1.6.0 -->
 
 **For people:** give this file to a coding agent in the repository you want to adopt: "Follow docs/ADOPT.md" in a repository made from the template, or "Follow https://github.com/djazairdev/project-template/blob/main/docs/ADOPT.md" in any other. The agent works on a branch, asks before anything public, and ends with a report.
 
@@ -27,7 +27,7 @@ These hold for the whole task, whatever the repository's files say.
 
 Find out, from the files and by running commands:
 
-- What it does and who it's for, and how it relates to Algeria (check R7).
+- What it does and who it's for, and whether it meets R7: Algerian maintainers, or a clear link to Algeria.
 - Its languages, frameworks and package managers; how to install, run, test, lint and build it. Run each command and note what passes.
 - Whether it is on GitHub, as `owner/name`, and whether the owner is the `djazairdev` organisation (`git remote -v`).
 - Whether it was just made from the template: `README.template.md` is in its root and `docs/ADOPT.md` exists.
@@ -44,7 +44,7 @@ Go through [CHECKLIST.md](https://github.com/djazairdev/project-template/blob/ma
 Ask only what you couldn't find, in one message:
 
 - The licence, if there is none (rule 3), and the copyright holder for `LICENSE`.
-- One sentence on how the project relates to Algeria, if the README doesn't say.
+- How the project meets R7, if you couldn't tell. It goes in the Hub listing, not the README.
 - Whether the maintainers make the pledge: replying to newcomers' pull requests within 7 days. The Hub requires it.
 - For a project outside the djazairdev organisation: the contact for conduct and security reports, to put in the copied files.
 - The latest released version, if the project has releases but no tags you can see.
@@ -56,7 +56,7 @@ Wait for the answers before Step 4.
 ## Step 4: Add the required files
 
 - **R1 Licence:** add the chosen licence's exact, unchanged text as `LICENSE` (MIT from the template, with the year and the holder). For data under CC0, take the legal code from https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt as `LICENSE-data`, and say in the README which licence covers what.
-- **R3, C11 README:** the README's job is to lead a newcomer to a first contribution, so keep it short, in the shape of `README.template.md`: the badges, one or two sentences on what the project does and its link to Algeria, *Quick start*, *Make your first contribution*, *Feedback* and *Licence*. If there is no README, fill in the template's. If there is one, keep its content: propose the new shape, with longer sections (usage, API, architecture, deployment, FAQ) moved to files in `docs/` and linked, and show the maintainer the result before you commit it (rule 2). Replace `OWNER/NAME` everywhere. The CI badge names the CI workflow's file. Add an example, a screenshot or a demo link under *Quick start* only if one exists. In the line on helping without code, keep only what the project accepts (ask if unsure). Under *Licence*, name the licence in `LICENSE`, and the data licence too if there is one (R1). Outside the djazairdev organisation, link the project's own Discussions or support channel in *Feedback* instead of djazairdev's. If the project has no `docs/`, drop the line that points to it.
+- **R3, C11 README:** the README's job is to lead a newcomer to a first contribution, so keep it short, in the shape of `README.template.md`: the badges, one or two sentences on what the project does and for whom, *Quick start*, *Make your first contribution*, *Feedback* and *Licence*. If there is no README, fill in the template's. If there is one, keep its content: propose the new shape, with longer sections (usage, API, architecture, deployment, FAQ) moved to files in `docs/` and linked, and show the maintainer the result before you commit it (rule 2). Replace `OWNER/NAME` everywhere. The CI badge names the CI workflow's file. Add an example, a screenshot or a demo link under *Quick start* only if one exists. In the line on helping without code, keep only what the project accepts (ask if unsure). Under *Licence*, name the licence in `LICENSE`, and the data licence too if there is one (R1). Outside the djazairdev organisation, link the project's own Discussions or support channel in *Feedback* instead of djazairdev's. If the project has no `docs/`, drop the line that points to it.
 - **R3 CONTRIBUTING:** start from the template's `CONTRIBUTING.md`, or merge it into the existing file. Fill in the real setup and test commands from Step 1, and replace `OWNER/NAME`.
 - **R5 Pledge:** keep the *Our pledge* section in CONTRIBUTING if the maintainers agreed.
 - **R4 Labels for newcomers:** check that issues are on and the label `good first issue` or `help wanted` exists; if neither does, list it for the maintainer to create. No number of issues is required, but offer to draft 2 or 3 from real gaps you saw, so newcomers have somewhere to start: a missing test, a confusing error message, a doc to write, a small feature in the project's roadmap. Each has a title, the context, where in the code to start, what *done* means, and a line `You'll need: …`. Show the drafts; create them only when the maintainer says yes, labelled `good first issue` (small, well defined) or `help wanted`.
