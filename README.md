@@ -21,7 +21,7 @@ The agent checks the project against the [checklist](docs/CHECKLIST.md), adds wh
 ## Make your first contribution
 
 1. Pick a project in the [Hub](https://djazair.dev/en/hub/), or an issue labelled [good first issue](https://github.com/djazairdev/project-template/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) here.
-2. Comment on the issue to say you're working on it.
+2. Comment `/take` on the issue: it's assigned to you, and you can start.
 3. Follow [CONTRIBUTING.md](CONTRIBUTING.md) and open a pull request.
 4. We reply to newcomers' pull requests within 7 days. A review or a merge may take longer.
 

@@ -1,6 +1,6 @@
 # Make this repository djazairdev ready
 
-<!-- djazairdev-template: 1.6.0 -->
+<!-- djazairdev-template: 1.7.0 -->
 
 **For people:** give this file to a coding agent in the repository you want to adopt: "Follow docs/ADOPT.md" in a repository made from the template, or "Follow https://github.com/djazairdev/project-template/blob/main/docs/ADOPT.md" in any other. The agent works on a branch, asks before anything public, and ends with a report.
 
@@ -37,7 +37,7 @@ Get the template's files somewhere outside the repository, for example `git clon
 
 ## Step 2: Report what's missing
 
-Go through [CHECKLIST.md](https://github.com/djazairdev/project-template/blob/main/docs/CHECKLIST.md) item by item (R1–R7, C1–C12, O1–O5) and show the maintainer a table: the item, *done*, *missing* or *partly*, and what you would do. Mark the items only a maintainer can do.
+Go through [CHECKLIST.md](https://github.com/djazairdev/project-template/blob/main/docs/CHECKLIST.md) item by item (R1–R7, C1–C13, O1–O5) and show the maintainer a table: the item, *done*, *missing* or *partly*, and what you would do. Mark the items only a maintainer can do.
 
 ## Step 3: Ask
 
@@ -71,6 +71,7 @@ Wait for the answers before Step 4.
 - **CONTRIBUTING, AGENTS.md:** keep the template's lines on Conventional Commit pull request titles and squash merges, and remove any instruction to edit the changelog or the version by hand.
 - **C7 AGENTS.md:** from the template, filled in with the commands from Step 1 and the project's own rules. If `CLAUDE.md` or another agent file exists, keep it and make the two agree. Keep the `djazairdev-template:` line, with the version at the top of this file. In CONTRIBUTING, keep the *Review*, *AI-assisted contributions* and *Licence* sections; merge them into an existing CONTRIBUTING rather than replacing its own rules, and show the maintainer.
 - **C12 Governance:** `GOVERNANCE.md` from the template, with the maintainers from Step 3, and `starters/community/CODEOWNERS` as `.github/CODEOWNERS` with the same usernames. If the project has its own governance document, keep it and add only what's missing.
+- **C13 Taking issues:** copy `.github/workflows/take.yml` from the template unchanged. In CONTRIBUTING, use the template's *Find something to work on* lines on `/take` and `/drop`, and in the README its *Make your first contribution* step 2. Replace any rule that makes contributors wait for a maintainer before they start an issue, and show the maintainer the change (rule 2).
 - **C8:** `.editorconfig` and `.gitattributes` from the template, only if the project has none, and changed to match its existing style. Don't reformat existing files.
 - **C3 Ruleset:** copy `.github/rulesets/` from the template and put the names of every job that runs the tests in `required_status_checks`, as GitHub shows them (`Test (Python 3.12)` for a matrix job). List the test jobs themselves, not only a job that `needs` them: a skipped required check counts as passed. Don't import it: that is the maintainer's step (Step 8).
 - **C10:** make sure `.gitignore` covers the project's build output and local environment files such as `.env`.
