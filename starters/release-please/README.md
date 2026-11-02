@@ -43,7 +43,7 @@ Starting CI on the release branch by hand doesn't replace the approval: GitHub d
    | Flutter, Dart | `dart` | `pubspec.yaml` |
    | Static site, dataset, anything else | `simple` | `version.txt` |
 
-3. Put the latest released version in `.release-please-manifest.json`, or keep `0.0.0` if there is none yet. The first `feat:` then releases 0.1.0. Keep `CHANGELOG.md`'s old entries: release-please adds new ones above them.
+3. Put the latest released version in `.release-please-manifest.json`, or keep `0.0.0` if there is none yet. release-please reads `0.0.0` as no release, so the first release pull request is for `initial-version` in `release-please-config.json`: 0.1.0, whatever the titles are. Without that line it would be 1.0.0. A project that wants 1.0.0 first sets `initial-version` to `1.0.0`; one with a release already can leave the line, since release-please uses it only for the first release. Keep `CHANGELOG.md`'s old entries: release-please adds new ones above them.
 4. In the ruleset, add `PR title` to the required checks and allow only squash merges. The template's [`.github/rulesets/main.json`](../../.github/rulesets/main.json) does both.
 5. **(maintainer)** In *Settings → General → Pull Requests*: allow only **squash merging**, with the default commit message set to **Pull request title**. Or run:
 
